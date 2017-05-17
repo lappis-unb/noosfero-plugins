@@ -20,6 +20,9 @@ class TccBlock < Block
   def create_folder
     puts "*" * 10000
     puts settings[:folder_name]
+
+    #folder = Article.find_by(:identifier, self.folder_name)
+
   end
 
 end
