@@ -18,8 +18,15 @@ class TccBlock < Block
   end
 
   def create_folder
-    puts "*" * 10000
-    puts settings[:folder_name]
+    engineering_names = ["Eletrônica" , "Software" , "Automotiva", "Aeroespacial", "Energia"]
+
+    engineering_names.each do |engineering_name|
+      folder = WorkAssignmentPlugin::WorkAssignment.new
+      folder.name = settings[:folder_name]
+      folder.profile_id = Profile.find_by(name: "TCC").id
+      folder.parent_id = Article.find_by(name: engineering_name, profile_id: folder.profile_id).id
+      folder.save
+    end
   end
 
 end
