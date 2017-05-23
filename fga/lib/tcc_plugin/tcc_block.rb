@@ -24,12 +24,14 @@ class TccBlock < Block
     engineering_names = ["Eletrônica" , "Software" , "Automotiva", "Aeroespacial", "Energia"]
     folder_name = settings[:submition_phase] + "#{" TCC "}" + settings[:submition_year].to_s + "#{"."}" + settings[:submition_semester].to_s
 
-    engineering_names.each do |engineering_name|
-      folder = WorkAssignmentPlugin::WorkAssignment.new
-      folder.name = folder_name
-      folder.profile_id = Profile.find_by(name: "TCC").id
-      folder.parent_id = Article.find_by(name: engineering_name, profile_id: folder.profile_id).id
-      folder.save
+    if !Article.find_by(name: folder_name)
+      engineering_names.each do |engineering_name|
+        folder = WorkAssignmentPlugin::WorkAssignment.new
+        folder.name = folder_name
+        folder.profile_id = Profile.find_by(name: "TCC").id
+        folder.parent_id = Article.find_by(name: engineering_name, profile_id: folder.profile_id).id
+        folder.save
+      end
     end
   end
 
