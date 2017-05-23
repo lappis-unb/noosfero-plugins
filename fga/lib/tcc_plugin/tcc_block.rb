@@ -1,9 +1,12 @@
 class TccBlock < Block
 
   after_save :create_folder
-  settings_items :folder_name, :type => :string, :default => 'all'
 
-  attr_accessible :folder_name
+  settings_items :submition_phase, :type => :string, :default => 'all'
+  settings_items :submition_year, :type => :integer, :default => 1900
+  settings_items :submition_semester, :type => :integer, :default => 0
+
+  attr_accessible :submition_phase, :submition_year, :submition_semester
 
   def self.description
     _('TCC')
@@ -19,10 +22,11 @@ class TccBlock < Block
 
   def create_folder
     engineering_names = ["Eletrônica" , "Software" , "Automotiva", "Aeroespacial", "Energia"]
+    folder_name = settings[:submition_phase] + "#{" TCC "}" + settings[:submition_year].to_s + "#{"."}" + settings[:submition_semester].to_s
 
     engineering_names.each do |engineering_name|
       folder = WorkAssignmentPlugin::WorkAssignment.new
-      folder.name = settings[:folder_name]
+      folder.name = folder_name
       folder.profile_id = Profile.find_by(name: "TCC").id
       folder.parent_id = Article.find_by(name: engineering_name, profile_id: folder.profile_id).id
       folder.save
