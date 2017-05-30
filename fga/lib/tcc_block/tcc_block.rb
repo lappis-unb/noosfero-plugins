@@ -20,9 +20,13 @@ class TccBlock < Block
     _('Submit TCC')
   end
 
+  def concatenate_folder_name_string(submition_phase, submition_year, submition_semester)
+    "#{submition_phase}" << " TCC " << "#{submition_year}" << "." << "#{submition_semester}"
+  end
+
   def create_folder
     engineering_names = ["Eletrônica" , "Software" , "Automotiva", "Aeroespacial", "Energia"]
-    folder_name = "#{settings[:submition_phase]}" << " TCC " << "#{settings[:submition_year]}" << "." << "#{settings[:submition_semester]}"
+    folder_name = concatenate_folder_name_string(settings[:submition_phase], settings[:submition_year], settings[:submition_semester])
 
     if !Article.find_by(name: folder_name)
       engineering_names.each do |engineering_name|
