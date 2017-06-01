@@ -11,7 +11,7 @@ class FgaPluginTest < ActiveSupport::TestCase
   end
 
   should 'add a block' do
-    assert_equal [FgaPlugin::TccBlock], FgaPlugin.extra_blocks.keys
+    assert_equal [TccBlock], FgaPlugin.extra_blocks.keys
   end
 
 end

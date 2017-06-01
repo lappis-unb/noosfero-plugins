@@ -32,8 +32,8 @@ class TccBlock < Block
       engineering_names.each do |engineering_name|
         folder = WorkAssignmentPlugin::WorkAssignment.new
         folder.name = folder_name
-        folder.profile_id = Profile.find_by(name: "TCC").id
-        folder.parent_id = Article.find_by(name: engineering_name, profile_id: folder.profile_id, parent_id: nil).id
+        folder.profile = Profile.find_by(name: "TCC")
+        folder.parent_id = Article.find_by(name: engineering_name, profile: folder.profile, parent_id: nil).id
         folder.save
       end
     end

@@ -10,7 +10,7 @@ class FgaPlugin < Noosfero::Plugin
 
   def self.extra_blocks
     {
-      FgaPlugin::TccBlock => {:type => [Environment, Community]}
+      TccBlock => {:type => [Environment, Community]}
     }
   end
 
