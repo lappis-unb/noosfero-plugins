@@ -1,7 +1,6 @@
-class FgaPluginAccountController < AccountController
+class FgaPluginAccountController < PublicController
 
   def tcc_login
-    puts "\n\n\n" + "xablau" + "\n\n\n"
     store_location(request.referer) unless params[:return_to] or session[:return_to]
 
     return unless request.post?
@@ -31,7 +30,4 @@ class FgaPluginAccountController < AccountController
     end
   end
 
-  def teste
-    @user = User.last
-  end
 end
