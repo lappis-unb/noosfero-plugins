@@ -4,7 +4,7 @@ ol {
     display: table;
     list-style-type: none;
     margin: 0;
-    padding: 2em 1em;
+    padding: 2em 0em;
     table-layout: fixed;
     width: 100%;
 
@@ -99,4 +99,8 @@ ol {
 #box-container {
   width:400px;
   border:1px solid #000;
+}
+
+.tcc-container {
+  height: 300px;
 }
