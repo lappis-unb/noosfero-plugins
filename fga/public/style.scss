@@ -102,5 +102,92 @@ ol {
 }
 
 .tcc-container {
-  height: 300px;
+  padding: 2em 0;
+  height: auto;
+}
+
+.courses-wrapper button {
+  padding: 0;
+  border: none;
+  width:19.55555%;
+  overflow: hidden;
+}
+
+.courses-wrapper button h2 {
+  transition: transform 0.5s ease;
+
+}
+
+.courses-wrapper button:hover h2{
+  transform: scale(1.23);
+}
+
+.btn-courses {
+  color: white;
+  display: inline-block;
+}
+
+.btn-courses h2 {
+  padding: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  margin: 0 !important;
+  width: auto;
+}
+
+.btn-courses span{
+  font-size: 3em;
+  background-color: #009551;
+  margin: 0;
+  padding: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+
+}
+
+#software div span {
+  background-color: #005e73;
+}
+
+#aeroespacial div span {
+ background-color: #005e5e;
+}
+
+#automotiva div span {
+ background-color: #00694e;
+ padding-left: 1.8em;
+}
+
+#energia div span {
+  background-color: #007848;
+}
+
+#eletronica div span {
+  // mantem a cor verd
+}
+
+#software div h2 {
+  background-color: #00738C;
+}
+
+#aeroespacial div h2 {
+ background-color: #006e6e;
+}
+
+#automotiva div h2 {
+ background-color: #007d5f;
+}
+
+#energia div h2 {
+  background-color: #008c54;
+}
+
+#eletronica div h2 {
+background-color: #00a65a;
+width: 100%;
+}
+
+#eletronica {
+  width: 20%;
+  overflow: hidden;
 }
