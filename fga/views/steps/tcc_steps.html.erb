@@ -46,5 +46,10 @@
 </ol>
 
 <div class="tcc-container">
-  <%= render partial: 'partials/course_choice'%>
+  <% if logged_in? %>
+    <%= render partial: 'partials/course_choice'%>
+  <% else %>
+    <%= render partial: 'partials/login'%>
+  <% end %>
+
 </div>
