@@ -1,7 +1,24 @@
+<script type="text/javascript">
+
+function course_choice(course_name){
+
+  var message_confirmation = confirm("Você escolheu: " + course_name);
+
+  if (message_confirmation == true) {
+    $.ajax({
+          url : "/plugin/fga/steps/tcc_steps",
+          type : "post",
+          data : {course_name: course_name}
+      });
+     $("#tcc-container").replaceWith('<%= escape_javascript(render partial: 'partials/upload_files') %>');
+  }
+}
+</script>
+
 <h2> Escolha seu curso: </h2>
 
 <div class= "courses-wrapper" >
-  <button type="button" name="button" id="software">
+  <button type="button" name="button" id="software" value="software" onclick="course_choice(this.value)">
     <div class= "btn-courses" >
       <span class="fa fa-terminal"></span>
       <h2 class="course-title">
@@ -9,7 +26,7 @@
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="aeroespacial">
+  <button type="button" name="button" id="aeroespacial" value="aeroespacial" onclick="course_choice(this.value)">
     <div class= "btn-courses" >
         <span class="fa fa-rocket"></span>
       <h2 class="course-title">
@@ -17,7 +34,7 @@
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="automotiva">
+  <button type="button" name="button" id="automotiva" value="automotiva" onclick="course_choice(this.value)">
     <div class= "btn-courses" >
         <span class="fa fa-car"></span>
       <h2 class="course-title">
@@ -25,7 +42,7 @@
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="energia">
+  <button type="button" name="button" id="energia" value="energia" onclick="course_choice(this.value)">
     <div class= "btn-courses" >
         <span class="fa fa-leaf"></span>
       <h2 class="course-title">
@@ -33,7 +50,7 @@
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="eletronica">
+  <button type="button" name="button" id="eletronica" value="eletronica" onclick="course_choice(this.value)">
     <div class= "btn-courses" >
         <span class="fa fa-desktop"></span>
       <h2 class="course-title">
