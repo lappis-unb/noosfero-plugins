@@ -15,18 +15,21 @@ function course_choice(course_name){
 }
 </script>
 
+
+<div class="steps-container">
+  <div class="steps-wrapper">
+    <%= render 'steps/progress_bar/login_passed' %>
+    <%= render 'steps/progress_bar/course_step' %>
+    <%= render 'steps/progress_bar/upload_inactive' %>
+  </div>
+</div>
+
 <h2> Escolha seu curso: </h2>
 
 <div class= "courses-wrapper" >
-  <button type="button" name="button" id="software" value="software" onclick="course_choice(this.value)">
-    <div class= "btn-courses" >
-      <span class="fa fa-terminal"></span>
-      <h2 class="course-title">
-        Software
-      </h2>
-    </div>
-  </button>
-  <button type="button" name="button" id="aeroespacial" value="aeroespacial" onclick="course_choice(this.value)">
+
+  <button type="button" name="button" id="aeroespacial" value="aeroespacial"
+          onclick="course_choice(this.value)">
     <div class= "btn-courses" >
         <span class="fa fa-rocket"></span>
       <h2 class="course-title">
@@ -34,27 +37,43 @@ function course_choice(course_name){
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="automotiva" value="automotiva" onclick="course_choice(this.value)">
+
+  <button type="button" name="button" id="automotiva" value="automotiva"
+          onclick="course_choice(this.value)">
     <div class= "btn-courses" >
-        <span class="fa fa-car"></span>
+      <span class="fa fa-car"></span>
       <h2 class="course-title">
         Automotiva
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="energia" value="energia" onclick="course_choice(this.value)">
+
+  <button type="button" name="button" id="eletronica" value="eletronica"
+          onclick="course_choice(this.value)">
     <div class= "btn-courses" >
-        <span class="fa fa-leaf"></span>
+      <span class="fa fa-desktop"></span>
+      <h2 class="course-title">
+        Eletrônica
+      </h2>
+    </div>
+  </button>
+
+  <button type="button" name="button" id="energia" value="energia"
+          onclick="course_choice(this.value)">
+    <div class= "btn-courses" >
+      <span class="fa fa-leaf"></span>
       <h2 class="course-title">
         Energia
       </h2>
     </div>
   </button>
-  <button type="button" name="button" id="eletronica" value="eletronica" onclick="course_choice(this.value)">
+
+  <button type="button" name="button" id="software" value="software"
+          onclick="course_choice(this.value)">
     <div class= "btn-courses" >
-        <span class="fa fa-desktop"></span>
+      <span class="fa fa-terminal"></span>
       <h2 class="course-title">
-        Eletrônica
+        Software
       </h2>
     </div>
   </button>

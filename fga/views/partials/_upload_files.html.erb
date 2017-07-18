@@ -1,1 +1,28 @@
-<h1>TESTE</h1>
+<div class="steps-container">
+  <div class="steps-wrapper">
+    <%= render 'steps/progress_bar/login_passed' %>
+    <%= render 'steps/progress_bar/course_passed' %>
+    <%= render 'steps/progress_bar/upload_step' %>
+  </div>
+</div>
+
+<% if @errors %>
+  <div class="errorExplanation" id="errorExplanation">
+    <h2><%= n_('This file couldn\'t be saved', 'These %{num} files couldn\'t be saved', @errors.size) % { :num => @errors.size } %></h2>
+    <p><%= _('There were problems with the following files:') %> </p>
+    <ul>
+      <% for file in @uploaded_files %>
+        <% for msg in file.errors.full_messages %>
+          <li><strong><%= file.name %></strong> : <%= msg %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h2><%= _('Publish media') %></h2>
+
+<h3><%= _("Select the files you want to upload (max size %s):") % UploadedFile.max_size.to_humanreadable %></h3>
+<h4><%= _('Documents, Images, Videos, Audio') %></h4>
+
+<h5><%= (_('Uploading files to %s') % content_tag('code', @target)).html_safe%></h5>

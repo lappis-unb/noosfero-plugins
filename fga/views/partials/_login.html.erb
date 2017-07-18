@@ -1,3 +1,11 @@
+<div class="steps-container">
+  <div class="steps-wrapper">
+    <%= render 'steps/progress_bar/login_step' %>
+    <%= render 'steps/progress_bar/course_inactive' %>
+    <%= render 'steps/progress_bar/upload_inactive' %>
+  </div>
+</div>
+
 <div class="login-box">
   <% unless logged_in? %>
 
